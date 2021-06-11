@@ -31,7 +31,6 @@ function winLoseDraw(user, cpu) {
 			break;
 	}
 	document.getElementById('result').innerHTML = result;
-	cpuPoint++;
 }
 
 function game(userChoice) {
