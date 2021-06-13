@@ -1,8 +1,22 @@
 let userPoint = 0, cpuPoint = 0;
+const resultElement = document.getElementById('result')
 
 function printPoints() {
 	document.getElementById('user').innerHTML = userPoint;
 	document.getElementById('cpu').innerHTML = cpuPoint;
+}
+
+function resultColor(result) {
+	if (result == 'd') {
+		resultElement.innerHTML = 'Draw!';
+		resultElement.style = 'display: block; background-color: #343a40';
+	} else if (result == 'l') {
+		resultElement.innerHTML = 'You Lose!';
+		resultElement.style = 'display: block; background-color: #e84258';
+	} else if (result == 'w') {
+		resultElement.innerHTML = 'You win!';
+		resultElement.style = 'display: block; background-color: #576f3a';
+	}
 }
 
 function cpuChoice() {
@@ -12,25 +26,24 @@ function cpuChoice() {
 }
 
 function winLoseDraw(user, cpu) {
-	let userChoice = user[0], cpuChoice = cpu[0], result;
+	let userChoice = user[0], cpuChoice = cpu[0];
 	switch (userChoice + cpuChoice) {
 		case 'rr':
 		case 'pp':
 		case 'ss':
-			result = 'Draw!';
+			resultColor('d');
 			break;
 		case 'rp':
 		case 'ps':
 		case 'sr':
 			cpuPoint++;
-			result = 'You Lose!';
+			resultColor('l');
 			break;
 		default:
 			userPoint++;
-			result = 'You Win!';
+			resultColor('w');
 			break;
 	}
-	document.getElementById('result').innerHTML = result;
 }
 
 function game(userChoice) {
