@@ -20,6 +20,11 @@ body {
 	margin: 0;
 	font-size: 30px;
 }
+#result {
+	display: none;
+	color: #e1e8eb;
+	padding: 10px;
+}
 table, .choice {
 	margin: 0 auto;
 }
