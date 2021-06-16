@@ -25,7 +25,7 @@ body {
 	color: #e1e8eb;
 	padding: 10px;
 }
-table, .choice {
+table {
 	margin: 0 auto;
 }
 th, td {
@@ -34,6 +34,10 @@ th, td {
 .choices {
 	text-align: center;
 }
-.choice {
+img {
 	display: inline;
+	transition: all .2s ease-in-out;
+}
+img:active {
+	transform: scale(1.1);
 }
